@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Аутентифікація</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        #authInfo {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #aaa;
+            background-color: #f3f3f3;
+        }
+
+        #logout {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: darkred;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Режим автентифікації</h2>
+
+    <form id="loginForm">
+        <input type="text" id="login" placeholder="Логін" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <button type="submit">Увійти</button>
+    </form>
+
+    <div id="authInfo" style="display:none">
+        <div><span class="label">Користувач:</span> <span id="username"></span></div>
+        <div><span class="label">Видано:</span> <span id="issued"></span></div>
+        <div><span class="label">Діє до:</span> <span id="expires"></span> <span id="interval"></span></div>
+    </div>
+
+    <button id="logout" style="display:none">Вихід</button>
+
+    <script type="module" src="auth.js"></script>
+</body>
+
+</html>
